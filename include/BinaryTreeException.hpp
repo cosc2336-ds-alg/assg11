@@ -15,7 +15,6 @@
 #include <string>
 using namespace std;
 
-
 /** @class BinaryTreeKeyNotFoundException
  * @brief BinaryTree Key Not Found Exception for the Binarytree class.
  *
@@ -35,6 +34,5 @@ private:
   /// Stores the particular message describing what caused the exception.
   string message;
 };
-
 
 #endif // _BINARYTREE_EXCEPTION_HPP_

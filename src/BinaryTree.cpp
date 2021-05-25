@@ -11,23 +11,21 @@
  * Implementation of the BinaryTree base class concrete member functions
  * and friend functions.
  */
-#include <iostream>
 #include "BinaryTree.hpp"
 #include "Employee.hpp"
+#include <iostream>
 using namespace std;
-
 
 /** size accessor
  * Accessor method to get the current size of this Binarytree of values.
  *
  * @returns int Returns the current size of the binarytree of values.
  */
-template <class Key, class Value>
+template<class Key, class Value>
 int BinaryTree<Key, Value>::getSize() const
 {
   return size;
 }
-
 
 /** check if empty binary tree
  * Accessor method to test if the BinaryTree is currently
@@ -36,14 +34,13 @@ int BinaryTree<Key, Value>::getSize() const
  * @returns bool Returns true if the BinaryTree is currently
  *   empty, or false if it has 1 or more items.
  */
-template <class Key, class Value>
+template<class Key, class Value>
 bool BinaryTree<Key, Value>::isEmpty() const
 {
   // can simply test size, if it is equal to 0, then it is true the
   // binarytree is empty, if it is not equal, then the answer is false
   return size == 0;
 }
-
 
 /** Binarytree output operator
  *@brief overload output stream operator for Binarytree type.
@@ -63,7 +60,7 @@ bool BinaryTree<Key, Value>::isEmpty() const
  *   output stream, but after we  have inserted current Binarytree
  *   values / representation onto the stream
  */
-template <typename K, typename V>
+template<typename K, typename V>
 ostream& operator<<(ostream& out, const BinaryTree<K, V>& rhs)
 {
   // reuse Binarytree str() method to stream to output stream
@@ -72,7 +69,6 @@ ostream& operator<<(ostream& out, const BinaryTree<K, V>& rhs)
   // return the modified output stream as our result
   return out;
 }
-
 
 /**
  * @brief Cause specific instance compilations
@@ -85,9 +81,8 @@ ostream& operator<<(ostream& out, const BinaryTree<K, V>& rhs)
  * https://isocpp.org/wiki/faq/templates#templates-defn-vs-decl
  * https://isocpp.org/wiki/faq/templates#separate-template-class-defn-from-decl
  */
-template ostream & operator<< <int, int>(ostream&, const BinaryTree<int, int>&);
-template ostream & operator<< <string, double>(ostream&, const BinaryTree<string, double>&);
-
+template ostream& operator<<<int, int>(ostream&, const BinaryTree<int, int>&);
+template ostream& operator<<<string, double>(ostream&, const BinaryTree<string, double>&);
 
 /**
  * @brief Cause specific instance compilations

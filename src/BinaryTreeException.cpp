@@ -10,10 +10,9 @@
  * Implement all exception methods that can be generated and thrown by BinaryTree
  * instances.
  */
-#include <string>
 #include "BinaryTreeException.hpp"
+#include <string>
 using namespace std;
-
 
 /**
  * @brief BinaryTreeKeyNotFoundException constructor
@@ -28,17 +27,13 @@ BinaryTreeKeyNotFoundException::BinaryTreeKeyNotFoundException(const string& mes
   this->message = message;
 }
 
-
 /**
  * @brief BinaryTreeKeyNotFoundException destructor
  *
  * Destructor for exceptions used for our BinaryTreeKeyNotFoundException
  * class.
  */
-BinaryTreeKeyNotFoundException::~BinaryTreeKeyNotFoundException()
-{
-}
-
+BinaryTreeKeyNotFoundException::~BinaryTreeKeyNotFoundException() {}
 
 /**
  * @brief BinaryTreeKeyNotFoundException message

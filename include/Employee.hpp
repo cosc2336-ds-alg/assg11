@@ -11,14 +11,12 @@
  *   we can use to demonstrate  key/value pair
  *   management.
  */
-#include <string>
 #include <iostream>
+#include <string>
 using namespace std;
-
 
 #ifndef EMPLOYEE_HPP
 #define EMPLOYEE_HPP
-
 
 // This should really be a class constant, however this
 // global constant represents a flag that is used to

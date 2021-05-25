@@ -23,11 +23,10 @@
  */
 #ifndef _LBINARYTREE_HPP_
 #define _LBINARYTREE_HPP_
-#include <string>
 #include "BinaryTree.hpp"
 #include "BinaryTreeNode.hpp"
+#include <string>
 using namespace std;
-
 
 /** @class LBinaryTree
  * @brief The LBinaryTree data type abstraction
@@ -37,7 +36,7 @@ using namespace std;
  * perform with binarytrees, such as insert items and search for items
  * in the tree.
  */
-template <class Key, class Value>
+template<class Key, class Value>
 class LBinaryTree : public BinaryTree<Key, Value>
 {
 private:
@@ -54,7 +53,7 @@ private:
 
 public:
   // constructors and destructors
-  LBinaryTree();  // default constructor
+  LBinaryTree(); // default constructor
 
   // construct from a list/array of key/value pairs
   LBinaryTree(int size, const Key keys[], const Value values[]);
@@ -67,6 +66,5 @@ public:
   // adding, accessing and removing values from the binarytree
   void clear();
 };
-
 
 #endif // define _LBINARYTREE_HPP_

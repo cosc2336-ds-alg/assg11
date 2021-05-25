@@ -9,10 +9,10 @@
  *
  * Tests of the LBinaryTree linked node implementation of the BinaryTree API.
  */
+#include "BinaryTreeException.hpp"
+#include "catch.hpp"
 #include <iostream>
 #include <string>
-#include "catch.hpp"
-#include "BinaryTreeException.hpp"
 // a testing kludge so we can test some private members you are to implement for tasks
 #define private public
 #include "LBinaryTree.hpp"
@@ -20,32 +20,27 @@
 #include "Employee.hpp"
 using namespace std;
 
-
 /** Test LBinaryTree construction and basic operations
  */
-TEST_CASE("LBinaryTreeNode<int, int> test tree construction <int,int> key/value types",
-          "[task0]")
+TEST_CASE("LBinaryTreeNode<int, int> test tree construction <int,int> key/value types", "[task0]")
 {
   // test empty tree construction
   LBinaryTree<int, int> empty;
   CHECK(empty.getSize() == 0);
-  CHECK(empty.isEmpty() );
+  CHECK(empty.isEmpty());
   CHECK(empty.str() == "<BinaryTree> size: 0 values: [ ]");
 }
 
-
 /** Test LBinaryTree construction and basic operations
  */
-TEST_CASE("LBinaryTreeNode<string, double> test tree construction <string,double> key/value types",
-          "[task0]")
+TEST_CASE("LBinaryTreeNode<string, double> test tree construction <string,double> key/value types", "[task0]")
 {
   // test empty tree construction
   LBinaryTree<string, double> empty;
   CHECK(empty.getSize() == 0);
-  CHECK(empty.isEmpty() );
+  CHECK(empty.isEmpty());
   CHECK(empty.str() == "<BinaryTree> size: 0 values: [ ]");
 }
-
 
 /** Test LBinaryTree insert member function
  */
@@ -89,7 +84,6 @@ TEST_CASE("LBinaryTreeNode<string, double> test tree construction <string,double
    CHECK( tree.str() == "<BinaryTree> size: 0 values: [ ]" );
    }
  */
-
 
 /** Test LBinaryTree insert member function
  */
@@ -142,7 +136,6 @@ TEST_CASE("LBinaryTreeNode<string, double> test tree construction <string,double
    }
  */
 
-
 /** Test LBinaryTree construction and basic operations
  */
 /*
@@ -163,7 +156,6 @@ TEST_CASE("LBinaryTreeNode<string, double> test tree construction <string,double
    }
  */
 
-
 /** Test LBinaryTree construction and basic operations
  */
 /*
@@ -183,7 +175,6 @@ TEST_CASE("LBinaryTreeNode<string, double> test tree construction <string,double
 
    }
  */
-
 
 /** Test LBinaryTree find member function
  */
@@ -215,7 +206,6 @@ TEST_CASE("LBinaryTreeNode<string, double> test tree construction <string,double
    CHECK_THROWS_AS( tree.find(42), BinaryTreeKeyNotFoundException );
    }
  */
-
 
 /** Test LBinaryTree find member function
  */
@@ -249,7 +239,6 @@ TEST_CASE("LBinaryTreeNode<string, double> test tree construction <string,double
    CHECK_THROWS_AS( tree.find("thanks-for-the-fish"), BinaryTreeKeyNotFoundException );
    }
  */
-
 
 /** Test private LBinaryTree getMinimum member function
  */
@@ -319,7 +308,6 @@ TEST_CASE("LBinaryTreeNode<string, double> test tree construction <string,double
    }
  */
 
-
 /** Test private LBinaryTree getMinimum member function
  */
 /*
@@ -387,7 +375,6 @@ TEST_CASE("LBinaryTreeNode<string, double> test tree construction <string,double
    CHECK( node->getValue() == Approx(1.1) );
    }
  */
-
 
 /** Test private LBinaryTree deleteMinimum member function
  */
@@ -489,7 +476,6 @@ TEST_CASE("LBinaryTreeNode<string, double> test tree construction <string,double
    }
  */
 
-
 /** Test private LBinaryTree deleteMinimum member function
  */
 /*
@@ -590,7 +576,6 @@ TEST_CASE("LBinaryTreeNode<string, double> test tree construction <string,double
    }
  */
 
-
 /** Test LBinaryTree remove member function
  */
 /*
@@ -678,7 +663,6 @@ TEST_CASE("LBinaryTreeNode<string, double> test tree construction <string,double
    CHECK( tree.str() == "<BinaryTree> size: 0 values: [ ]" );
    }
  */
-
 
 /** Test LBinaryTree remove member function
  */

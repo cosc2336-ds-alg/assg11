@@ -14,7 +14,6 @@
 #ifndef _BINARYTREENODE_HPP_
 #define _BINARYTREENODE_HPP_
 
-
 /** BinaryTreeNode
  * @brief A simple BinaryTreeNode for BinaryTrees.
 
@@ -25,7 +24,7 @@
  * pointer based binary trees to create and use the nodes.
  *
  */
-template <class Key, class Value>
+template<class Key, class Value>
 class BinaryTreeNode
 {
 private:
@@ -72,6 +71,5 @@ public:
   BinaryTreeNode<Key, Value>* getRight() const;
   void setRight(BinaryTreeNode<Key, Value>* right);
 };
-
 
 #endif // define _BINARYTREENODE_HPP_

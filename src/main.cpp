@@ -13,11 +13,10 @@
  * This file is a stub for a main() function so that we can build a
  * version suitable for running in the debugger.
  */
-#include <iostream>
 #include "BinaryTree.hpp"
 #include "BinaryTreeNode.hpp"
+#include <iostream>
 using namespace std;
-
 
 /** main entry point
  * Main entry point for debugging functions.
