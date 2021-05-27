@@ -23,31 +23,35 @@ using namespace std;
 // indicate empty slots and/or failed search.
 const int EMPTY_EMPLOYEE_ID = 0;
 
-/** Employee
- * A simple Employee class/record to demonstrate/test
- * our hashing dictionary assignment.
- * NOTE: we are using 0 as a flag to represent an unused
- * slot or an invalid/empty employee.  This is used/assumed
- * by our dictionary class to determine if a slot is empty
- * and/or to give a failure result for a failed search.
+/** @class Employee
+ * @brief A simple example Employee record
+ *
+ * A simple Employee class/record to demonstrate/test our hashing
+ * dictionary assignment.  NOTE: we are using 0 as a flag to represent
+ * an unused slot or an invalid/empty employee.  This is used/assumed
+ * by our dictionary class to determine if a slot is empty and/or to
+ * give a failure result for a failed search.
  */
 class Employee
 {
+public:
+  // constructors
+  Employee();
+  Employee(int id, string name, string address, float salary);
+
+  // accessor methods
+  int getId() const;
+  string getName() const;
+  string str() const;
+
+  // class operators
+  friend ostream& operator<<(ostream& out, Employee& employee);
+
 private:
   int id;
   string name;
   string address;
   float salary;
-
-public:
-  Employee();
-  Employee(int id, string name, string address, float salary);
-
-  int getId() const;
-  string getName() const;
-  string str() const;
-
-  friend ostream& operator<<(ostream& out, Employee& employee);
 };
 
 #endif // EMPLOYEE_HPP

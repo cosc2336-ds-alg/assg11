@@ -16,7 +16,9 @@
 #include <iostream>
 using namespace std;
 
-/** size accessor
+/**
+ * @brief Size accessor
+ *
  * Accessor method to get the current size of this Binarytree of values.
  *
  * @returns int Returns the current size of the binarytree of values.
@@ -27,7 +29,9 @@ int BinaryTree<Key, Value>::getSize() const
   return size;
 }
 
-/** check if empty binary tree
+/**
+ * @brief Check if empty binary tree
+ *
  * Accessor method to test if the BinaryTree is currently
  * empty or not.
  *
@@ -42,8 +46,8 @@ bool BinaryTree<Key, Value>::isEmpty() const
   return size == 0;
 }
 
-/** Binarytree output operator
- *@brief overload output stream operator for Binarytree type.
+/**
+ * @brief Overload output stream operator for Binarytree type.
  *
  * Overload the output stream operator so that we can display current
  * values of a Binarytree on standard output.  We can define this in the

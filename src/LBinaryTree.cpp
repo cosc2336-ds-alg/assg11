@@ -29,7 +29,105 @@
 #include <string>
 using namespace std;
 
-/** to string
+/**
+ * @brief Default constructor
+ *
+ * Construct an initially empty binary tree.
+ */
+template<class Key, class Value>
+LBinaryTree<Key, Value>::LBinaryTree()
+{
+  root = nullptr;
+  BinaryTree<Key, Value>::size = 0;
+}
+
+/**
+ * @brief Array based constructor
+ *
+ * Construct a tree from parallel lists of given keys and values.  We
+ * simply reuse the insert method to iterate through and insert all of
+ * the key/value pairs.  Key/value pairs are inserted into the tree in
+ * the order they are passed in the arrays.  This constructor assumes
+ * the arrays are parallel arrays, e.g. they are of the same size and
+ * each indexed element corresponds to a key/value pair.
+ *
+ * @param size The size of the parallel input arrays of keys and values
+ * @param keys An array of Key types to be inserted into newly constructed tree.
+ * @param values An array of Value types to be inserted into newly
+ *   constructed tree.
+ */
+template<class Key, class Value>
+LBinaryTree<Key, Value>::LBinaryTree(int size, const Key keys[], const Value values[])
+{
+  // initialze the tree so it is initially empty
+  root = nullptr;
+  BinaryTree<Key, Value>::size = 0;
+
+  // iterate through all of the key/value pairs in parallel arrays, inserting
+  // them into the tree.
+  for (int idx = 0; idx < size; idx++)
+  {
+    // need to uncomment this after implementing insert so that array
+    // based constructor will now work
+    // insert(keys[idx], values[idx]);
+  }
+}
+
+/**
+ * @brief Class destructor
+ *
+ * Destroy the dynamically allocated nodes of this tree when the
+ * instance object is going out of scope.  We (re)use the clear()
+ * method here.
+ */
+template<class Key, class Value>
+LBinaryTree<Key, Value>::~LBinaryTree()
+{
+  clear();
+}
+
+/**
+ * @brief LBinaryTree to string
+ *
+ * Create a string representation of this tree.  This is the
+ * public function, it calls the private recursive overloaded
+ * str() to perform most of the work, though it does add in
+ * the preamble and size of the tree.
+ *
+ * @returns string Returns the constructed string of the BinaryTree
+ *   contents in ascending sorted order.
+ */
+template<class Key, class Value>
+string LBinaryTree<Key, Value>::str() const
+{
+  ostringstream out;
+
+  out << "<BinaryTree> size: " << BinaryTree<Key, Value>::size << " values: [ " << str(root) << "]";
+
+  return out.str();
+}
+
+/**
+ * @brief Clear the tree
+ *
+ * Clear the tree and return to an empty state.  Make sure we are
+ * good managers of memory, and traverse the tree to delete all
+ * dynamically allocated nodes currently in this tree.
+ */
+template<class Key, class Value>
+void LBinaryTree<Key, Value>::clear()
+{
+  // actual work done in overloaded private clear() recursive function
+  clear(root);
+
+  // when we are done clearing, ensure tree is back to empty state
+  root = nullptr;
+  BinaryTree<Key, Value>::size = 0;
+}
+
+/**
+ * @brief Private LBinaryTree to string
+ *
  * This is the recursive private function that does the actual
  * work of creating a string representation of the LBinaryTree.
  * We perform a (recursive) inorder traversal, constructing a
@@ -61,7 +159,9 @@ string LBinaryTree<Key, Value>::str(BinaryTreeNode<Key, Value>* node) const
   }
 }
 
-/** private recursive clear tree
+/**
+ * @brief Private recursive clear tree
+ *
  * Clear the tree and return to an empty state.  Make sure we are
  * good managers of memory, and traverse the tree to delete all
  * dynamically allocated nodes currently in this tree.
@@ -87,92 +187,6 @@ void LBinaryTree<Key, Value>::clear(BinaryTreeNode<Key, Value>* node)
 
   // now we can free up this node safely
   delete node;
-}
-
-/** default constructor
- * Construct an initially empty binary tree.
- */
-template<class Key, class Value>
-LBinaryTree<Key, Value>::LBinaryTree()
-{
-  root = nullptr;
-  BinaryTree<Key, Value>::size = 0;
-}
-
-/** array based constructor
- * Construct a tree from parallel lists of given keys and values.  We
- * simply reuse the insert method to iterate through and insert all of
- * the key/value pairs.  Key/value pairs are inserted into the tree in
- * the order they are passed in the arrays.  This constructor assumes
- * the arrays are parallel arrays, e.g. they are of the same size and
- * each indexed element corresponds to a key/value pair.
- *
- * @param size The size of the parallel input arrays of keys and values
- * @param keys An array of Key types to be inserted into newly constructed tree.
- * @param values An array of Value types to be inserted into newly
- *   constructed tree.
- */
-template<class Key, class Value>
-LBinaryTree<Key, Value>::LBinaryTree(int size, const Key keys[], const Value values[])
-{
-  // initialze the tree so it is initially empty
-  root = nullptr;
-  BinaryTree<Key, Value>::size = 0;
-
-  // iterate through all of the key/value pairs in parallel arrays, inserting
-  // them into the tree.
-  for (int idx = 0; idx < size; idx++)
-  {
-    // need to uncomment this after implementing insert so that array
-    // based constructor will now work
-    // insert(keys[idx], values[idx]);
-  }
-}
-
-/** class destructor
- * Destroy the dynamically allocated nodes of this tree when the
- * instance object is going out of scope.  We (re)use the clear()
- * method here.
- */
-template<class Key, class Value>
-LBinaryTree<Key, Value>::~LBinaryTree()
-{
-  clear();
-}
-
-/** to string
- * Create a string representation of this tree.  This is the
- * public function, it calls the private recursive overloaded
- * str() to perform most of the work, though it does add in
- * the preamble and size of the tree.
- *
- * @returns string Returns the constructed string of the BinaryTree
- *   contents in ascending sorted order.
- */
-template<class Key, class Value>
-string LBinaryTree<Key, Value>::str() const
-{
-  ostringstream out;
-
-  out << "<BinaryTree> size: " << BinaryTree<Key, Value>::size << " values: [ " << str(root) << "]";
-
-  return out.str();
-}
-
-/** clear the tree
- * Clear the tree and return to an empty state.  Make sure we are
- * good managers of memory, and traverse the tree to delete all
- * dynamically allocated nodes currently in this tree.
- */
-template<class Key, class Value>
-void LBinaryTree<Key, Value>::clear()
-{
-  // actual work done in overloaded private clear() recursive function
-  clear(root);
-
-  // when we are done clearing, ensure tree is back to empty state
-  root = nullptr;
-  BinaryTree<Key, Value>::size = 0;
 }
 
 /**

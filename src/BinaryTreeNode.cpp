@@ -16,7 +16,9 @@
 #include <string>
 using namespace std;
 
-/** default constructor
+/**
+ * @brief Default constructor
+ *
  * Construct an empty node, with no key/value pair and both
  * children are nullptr indicating no children present.
  */
@@ -29,7 +31,9 @@ BinaryTreeNode<Key, Value>::BinaryTreeNode()
   this->right = nullptr;
 }
 
-/** standard constructor
+/**
+ * @brief Standard constructor
+ *
  * The standard way to construct a node is we know the
  * key/value pair the node will hold.  So initialize those
  * fields of the node, but have left and right children
@@ -45,7 +49,9 @@ BinaryTreeNode<Key, Value>::BinaryTreeNode(Key key, Value value)
   this->right = nullptr;
 }
 
-/** destructor
+/**
+ * @brief Class destructor
+ *
  * The destructor for this BinaryTreeNode instance.
  */
 template<class Key, class Value>
@@ -58,7 +64,9 @@ BinaryTreeNode<Key, Value>::~BinaryTreeNode()
   //     << endl;
 }
 
-/** get key
+/**
+ * @brief Get key
+ *
  * Accessor method to return the key of the key/value pair
  * being held by this node.
  *
@@ -70,7 +78,9 @@ Key BinaryTreeNode<Key, Value>::getKey() const
   return key;
 }
 
-/** get value
+/**
+ * @brief Get value
+ *
  * Accessor method to return the value of the key/value pair
  * being held by this node.
  *
@@ -82,7 +92,9 @@ Value BinaryTreeNode<Key, Value>::getValue() const
   return value;
 }
 
-/** is leaf node
+/**
+ * @brief Is leaf node
+ *
  * Information method returns true if this node is a leaf node,
  * e.g. if both the left and right children are nullptr.  Returns
  * false if this is not a leaf node, when 1 or both children
@@ -98,7 +110,9 @@ bool BinaryTreeNode<Key, Value>::isLeaf() const
   return ((left == nullptr) and (right == nullptr));
 }
 
-/** set key
+/**
+ * @brief Set key
+ *
  * Mutator method to set the key of the key/value pair
  * being held by this node.
  *
@@ -110,7 +124,8 @@ void BinaryTreeNode<Key, Value>::setKey(const Key& key)
   this->key = key;
 }
 
-/** set value
+/**
+ * @brief Set value
  * Mutator method to set the value of the key/value pair
  * being held by this node.
  *
@@ -122,7 +137,9 @@ void BinaryTreeNode<Key, Value>::setValue(const Value& value)
   this->value = value;
 }
 
-/** has left child
+/**
+ * @brief Has left child
+ *
  * Test and return true if this node has a left child.  Return
  * false if the node does not have a left child.
  *
@@ -135,7 +152,9 @@ bool BinaryTreeNode<Key, Value>::hasLeft() const
   return (left != nullptr);
 }
 
-/** get left child
+/**
+ * @brief Get left child
+ *
  * Method to get left child of this node for performing
  * tree taversals.
  *
@@ -149,7 +168,9 @@ BinaryTreeNode<Key, Value>* BinaryTreeNode<Key, Value>::getLeft() const
   return left;
 }
 
-/** set left child
+/**
+ * @brief Set left child
+ *
  * Method to set left child of this node for performing
  * tree insertions and management.  This method simply deletes
  * any existing left child, so it is unsafe to call if unsure
@@ -164,7 +185,9 @@ void BinaryTreeNode<Key, Value>::setLeft(BinaryTreeNode<Key, Value>* left)
   this->left = left;
 }
 
-/** has right child
+/**
+ * @brief Has right child
+ *
  * Test and return true if this node has a right child.  Return
  * false if the node does not have a right child.
  *
@@ -177,7 +200,9 @@ bool BinaryTreeNode<Key, Value>::hasRight() const
   return (right != nullptr);
 }
 
-/** get right child
+/**
+ * @brief Get right child
+ *
  * Method to get right child of this node for performing
  * tree taversals.
  *
@@ -191,7 +216,9 @@ BinaryTreeNode<Key, Value>* BinaryTreeNode<Key, Value>::getRight() const
   return right;
 }
 
-/** set right child
+/**
+ * @brief Set right child
+ *
  * Method to set right child of this node for performing
  * tree insertions and management.  This method simply deletes
  * any existing right child, so it is unsafe to call if unsure

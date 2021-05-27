@@ -14,7 +14,7 @@
 #ifndef _BINARYTREENODE_HPP_
 #define _BINARYTREENODE_HPP_
 
-/** BinaryTreeNode
+/** @class BinaryTreeNode
  * @brief A simple BinaryTreeNode for BinaryTrees.
 
  * This node type is used to hold values in our pointer/ dynamic
@@ -27,26 +27,6 @@
 template<class Key, class Value>
 class BinaryTreeNode
 {
-private:
-  /// @brief the node's key, what is used to actually organize the binary
-  ///    search tree, and forms a key/value pair with the nodes value.
-  Key key;
-
-  /// @brief the actual date value being stored by this node
-  Value value;
-
-  /// @brief A pointer to the left child of this current node.
-  ///    This can be a nullptr to indicate no left child.  For
-  ///    a binary search tree, the key value of the left child
-  ///    must be ordered before the key value of this node.
-  BinaryTreeNode<Key, Value>* left;
-
-  /// @brief A pointer to the right child of this current node.
-  ///    This can be a nullptr to indicate no right child.  For
-  ///    a binary search tree, the key value of the right child
-  ///    must be ordered after the key value of this node.
-  BinaryTreeNode<Key, Value>* right;
-
 public:
   // constructors and destructors
   BinaryTreeNode();
@@ -70,6 +50,26 @@ public:
   bool hasRight() const;
   BinaryTreeNode<Key, Value>* getRight() const;
   void setRight(BinaryTreeNode<Key, Value>* right);
+
+private:
+  /// @brief the node's key, what is used to actually organize the binary
+  ///    search tree, and forms a key/value pair with the nodes value.
+  Key key;
+
+  /// @brief the actual date value being stored by this node
+  Value value;
+
+  /// @brief A pointer to the left child of this current node.
+  ///    This can be a nullptr to indicate no left child.  For
+  ///    a binary search tree, the key value of the left child
+  ///    must be ordered before the key value of this node.
+  BinaryTreeNode<Key, Value>* left;
+
+  /// @brief A pointer to the right child of this current node.
+  ///    This can be a nullptr to indicate no right child.  For
+  ///    a binary search tree, the key value of the right child
+  ///    must be ordered after the key value of this node.
+  BinaryTreeNode<Key, Value>* right;
 };
 
 #endif // define _BINARYTREENODE_HPP_

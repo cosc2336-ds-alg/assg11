@@ -39,18 +39,6 @@ using namespace std;
 template<class Key, class Value>
 class LBinaryTree : public BinaryTree<Key, Value>
 {
-private:
-  /// @brief The root of this binary tree.  When tree is empty then
-  ///   root should be nullptr and size should be 0
-  BinaryTreeNode<Key, Value>* root;
-
-  // private member functions.  These are overloaded recursive functions
-  // that do most of the real work of the public interface.  The public
-  // interface simply calls the private recursive methods on the root
-  // node to perform the operation.
-  string str(BinaryTreeNode<Key, Value>* node) const;
-  void clear(BinaryTreeNode<Key, Value>* node);
-
 public:
   // constructors and destructors
   LBinaryTree(); // default constructor
@@ -65,6 +53,18 @@ public:
 
   // adding, accessing and removing values from the binarytree
   void clear();
+
+private:
+  /// @brief The root of this binary tree.  When tree is empty then
+  ///   root should be nullptr and size should be 0
+  BinaryTreeNode<Key, Value>* root;
+
+  // private member functions.  These are overloaded recursive functions
+  // that do most of the real work of the public interface.  The public
+  // interface simply calls the private recursive methods on the root
+  // node to perform the operation.
+  string str(BinaryTreeNode<Key, Value>* node) const;
+  void clear(BinaryTreeNode<Key, Value>* node);
 };
 
 #endif // define _LBINARYTREE_HPP_
