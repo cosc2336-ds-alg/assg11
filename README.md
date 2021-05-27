@@ -139,17 +139,15 @@ you have completed the following setup steps.
    current class semester and section.
 2. Clone the repository using the SSH URL to your local class DevBox
    development environment.
-3. Checkout the 'origins/feedback' branch to your local working DevBox
-   repository.
-4. Configure the project by running the `configure` script from a terminal.
-5. Confirm that the project builds and runs, though no tests will be
+3. Configure the project by running the `configure` script from a terminal.
+4. Confirm that the project builds and runs, though no tests will be
    defined or run initially.  If the project does not build on the first
    checkout, please inform the instructor.
-6. You should create the issue for Task 1 and/or for all tasks for the assignment
-   now before beginning the first task.  On your GitHub account, go to issues,
-   and create it/them from the issue templates for the assignment.  Also you
-   should close the initial Pull request that should be automatically
-   opened for you, so that you can open your own when committing your work.
+5. You should create the issue for Task 1 and/or for all tasks for the
+   assignment now before beginning the first task.  On your GitHub
+   account, go to issues, and create it/them from the issue templates
+   for the assignment.  Also make sure that you link the tasks with
+   the open `Feedback` pull request.
 
 
 # Assignment Tasks
@@ -157,8 +155,8 @@ you have completed the following setup steps.
 ## Task 1: Implement the `LBinaryTree` `insert()` Method
 
 As usual make sure that you have created Task 1 on your
-GitHub repository for this assignment and are ready to create
-a new Pull request for this assignment.
+GitHub repository for this assignment and have linked the
+Task 1 issue with the open `Feedback` pull request.
 
 There are two tests cases in `test-LBinaryTree.cpp` for the
 implementation of the `insert()` member method.  You can
@@ -293,7 +291,7 @@ able to pass all of the first 6 test cases for task 0 and task 1 now
 for the assignment
 
 When you are satisfied with your work for task 1, commit your changes
-and push them to the `feedback` branch of your class repository.
+and push them to the `Feedback` pull request of your class repository.
 
 ## Task 2: Implement the `LBinaryTree` `find()` Method
 
@@ -351,7 +349,7 @@ you as the result of calling the public `find()` API implementation.
 You should uncomment the other test case for task 2 and make sure that
 your implementation passes all of the tests of the `find()`
 method. When you have the tests passing, commit your changes and push
-them to the `feedback` branch of your assignment repository.
+them to the `Feedback` pull request of your assignment repository.
 
 ## Task 3: Implement the `LBinaryTree` Private `getMinimum()` Helper Method
 
@@ -404,7 +402,7 @@ task 4.  You should uncomment the first one, and create a stub function that com
 and runs the tests before beginning your implementation.  Once you can pass the
 tests in the first test case, uncomment and check you can pass them for the second
 test case of task 4 as well.  Once you are satisfied with your results, commit
-your work for task 4 and push your commit to the `feedback` branch of your
+your work for task 4 and push your commit to the `Feedback` pull request of your
 assignment repository.
 
 
@@ -446,7 +444,7 @@ uncomment the second test case for task 4 and make sure your function
 works for different data types.
 
 Once you are satisfied with your task 4 implementation, commit your
-changes and push them to the `feedback` branch of your assignment
+changes and push them to the `Feedback` pull request of your assignment
 repository.
 
 ## Task 5: Implement the `LBinaryTree` `remove()` Method
@@ -509,20 +507,18 @@ are:
 	  `deleteMinimum()` recursively, you should delete the minimum node's allocation
 	  using the C++ `delete` command.
 	 
- This is a complex set of steps, and could maybe even use some more
- helper functions.  For example, the whole general case for when we
- have found the node to remove might be better to remove to another
- private member function?  But these steps are based on our `Shaffer`
- textbook implementation, so as a hint, try reading the textbook and
- looking at the explanation and code given there for a better
- understanding of how to implement the full `remove()` function.
+This is a complex set of steps, and could maybe even use some more
+helper functions.  For example, the whole general case for when we
+have found the node to remove might be better to remove to another
+private member function?  But these steps are based on our `Shaffer`
+textbook implementation, so as a hint, try reading the textbook and
+looking at the explanation and code given there for a better
+understanding of how to implement the full `remove()` function.
  
- When you are done, make sure you uncomment the second test case for
- task 5.  When you are able to get all of the tests to pass for your
- `remove()` implementation, commit your work and push it to your
- assignment repository `feedback` branch.
-	 
-
+When you are done, make sure you uncomment the second test case for
+task 5.  When you are able to get all of the tests to pass for your
+`remove()` implementation, commit your work and push it to your
+assignment repository `Feedback` pull request.
 
 
 # Assignment Submission
