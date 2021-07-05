@@ -1,7 +1,7 @@
 ---
-name: 'Task 2: Implement `lbINARYtREE` `fIND()` Method'
+name: 'Task 2: Implement `LBinaryTree` `find()` Method'
 about: Task 2 for Students
-title: 'Task 2: Implement `lbINARYtREE` `fIND()` Method'
+title: 'Task 2: Implement `LBinaryTree` `find()` Method'
 labels: enhancement
 assignees: ''
 
