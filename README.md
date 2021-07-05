@@ -480,6 +480,7 @@ are:
 
 4. If we checked and the key was not less or greater then this nodes key,
    then we found the key so this is the node to delete.
+   
    a. Make a temporary pointer and point it to this `node`.  This will hold the
       `node` to return, which might be this `node`.
    b. If this node does not have a `left` child subtree, it means this `node` is
