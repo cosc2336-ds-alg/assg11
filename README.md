@@ -481,32 +481,32 @@ are:
 4. If we checked and the key was not less or greater then this nodes key,
    then we found the key so this is the node to delete.
    
-   a. Make a temporary pointer and point it to this `node`.  This will hold the
-      `node` to return, which might be this `node`.
-   b. If this node does not have a `left` child subtree, it means this `node` is
-      either a leaf node (no children) or it has a right subtree.  In either case we
-	  want to set the node to return to be the `right` subtree of this `node` and then
-	  delete this `node`.
-   c. Else if this node does not have a `right` child, that means it only has a `left` child
-      since we just check if it didn't have a `left` child.  In that case, we want to
-	  get the `left` subtree and set it as the node to be returned, and then delete
-	  this `node`.
-   d. Otherwise, we checked and the tree has both a `left` and a `right` subtree.
-      This is the difficult case.  When we have both subtrees, we want to find the
-	  minimum node in the right subtree, and swap this nodes values with the values of
-	  our minimum node.  So first use `findMinimum()` to find the minimum node of the
-	  `right` subtree of this node.  Then use the `setKey()` and `setValue()`
-	  methods to copy the value from the minimum node into the key and value of this node.
-	  Then finally set our right node to the result of calling `deleteMinimum()` on our
-	  `right` subtree.  The effect is as if we copied the minimum values in our right
-	  subtree (which is the next closest value to this node) and then delete that minimum
-	  node in the right subtree.  You should try this out by hand to convince yourself
-	  this works correctly to delete the asked for node and maintain the binary
-	  search tree structure. **NOTE**: The `deleteMinimum()` function removes the
-	  node from the tree, but it should not actually deallocate the memory.  It is
-	  better to deallocate the memory in `remove()`.  At this point, after calling
-	  `deleteMinimum()` recursively, you should delete the minimum node's allocation
-	  using the C++ `delete` command.
+    a. Make a temporary pointer and point it to this `node`.  This will hold the
+       `node` to return, which might be this `node`.
+    b. If this node does not have a `left` child subtree, it means this `node` is
+       either a leaf node (no children) or it has a right subtree.  In either case we
+	   want to set the node to return to be the `right` subtree of this `node` and then
+	   delete this `node`.
+    c. Else if this node does not have a `right` child, that means it only has a `left` child
+       since we just check if it didn't have a `left` child.  In that case, we want to
+	   get the `left` subtree and set it as the node to be returned, and then delete
+	   this `node`.
+    d. Otherwise, we checked and the tree has both a `left` and a `right` subtree.
+       This is the difficult case.  When we have both subtrees, we want to find the
+	   minimum node in the right subtree, and swap this nodes values with the values of
+	   our minimum node.  So first use `findMinimum()` to find the minimum node of the
+	   `right` subtree of this node.  Then use the `setKey()` and `setValue()`
+	   methods to copy the value from the minimum node into the key and value of this node.
+	   Then finally set our right node to the result of calling `deleteMinimum()` on our
+	   `right` subtree.  The effect is as if we copied the minimum values in our right
+	   subtree (which is the next closest value to this node) and then delete that minimum
+	   node in the right subtree.  You should try this out by hand to convince yourself
+	   this works correctly to delete the asked for node and maintain the binary
+	   search tree structure. **NOTE**: The `deleteMinimum()` function removes the
+	   node from the tree, but it should not actually deallocate the memory.  It is
+	   better to deallocate the memory in `remove()`.  At this point, after calling
+	   `deleteMinimum()` recursively, you should delete the minimum node's allocation
+	   using the C++ `delete` command.
 	 
 This is a complex set of steps, and could maybe even use some more
 helper functions.  For example, the whole general case for when we
