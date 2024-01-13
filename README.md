@@ -1,7 +1,7 @@
 ---
 title: 'Assignment Trees: Binary Search Trees'
 author: 'COSC 2336: Data Structures and Algorithms'
-date: 'Summer 2021'
+date: 'Spring 2024'
 ---
 
 \newcommand{\BigO}[1]{$\mathcal{O}(#1)$}
@@ -111,8 +111,8 @@ using and adding code to for this assignment.
 
 | File Name                                         | Description                                                                                                                         |
 |---------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| `src/test-BinaryTreeNode.cpp`                     | Unit tests of the  `BinaryTreeNode` structure that holds key/value pairs for our `BinaryTree` implementation                        |
-| `src/test-LBinaryTree.cpp`                        | Unit tests of the link/pointer based `LBinaryTree` implementation of the `BinaryTree` API                                           |
+| `src/assg11-BinaryTreeNode-tests.cpp`             | Unit tests of the  `BinaryTreeNode` structure that holds key/value pairs for our `BinaryTree` implementation                        |
+| `src/assg11-LBinaryTree-tests.cpp`                | Unit tests of the link/pointer based `LBinaryTree` implementation of the `BinaryTree` API                                           |
 | `include/BinaryTree.hpp`                          | Header file of the ADT base `BinaryTree` class that defines the `BinaryTree` interface / abstraction                                |
 | `include/LBinaryTree.hpp`                         | Header file of the concrete pointer/node based implementation of the `BinaryTree` abstract data type                                |
 | `include/BinaryTreeNode.hpp`                      | Header file of the Node structure used by the linked pointer based implementation                                                   |
@@ -138,12 +138,12 @@ you have completed the following setup steps.
    assignment invitation link for 'Assignment Recursion' for our
    current class semester and section.
 2. Clone the repository using the SSH URL to your local class DevBox
-   development environment.
-3. Configure the project by running the `configure` script from a terminal.
-4. Confirm that the project builds and runs, though no tests will be
+   development environment. Make sure to open the cloned
+   folder and restart inside of the correct Dev Container.
+3. Confirm that the project builds and runs, though no tests will be
    defined or run initially.  If the project does not build on the first
    checkout, please inform the instructor.
-5. You should create the issue for Task 1 and/or for all tasks for the
+4. You should create the issue for Task 1 and/or for all tasks for the
    assignment now before beginning the first task.  On your GitHub
    account, go to issues, and create it/them from the issue templates
    for the assignment.  Also make sure that you link the tasks with
@@ -323,7 +323,7 @@ unit tests.
 The recursive algorithm for the recursive private `find()` is as
 follows:
 
-**Base Case**: If you ever call the `find()` funciton with a `nullptr`
+**Base Case**: If you ever call the `find()` function with a `nullptr`
 node as the first parameter, this means the search has failed.  In that
 case, you should throw a `BinaryTreeKeyNotFoundException` to inform
 the caller that the key they were expecting to find was not in the tree.
@@ -357,7 +357,7 @@ The only remaining public API method of our binary tree is the
 `remove()` method.  Remove can be a bit tricky in some cases.  If you
 ask to remove a leaf node, this method is very simply, simply delete the node
 and set the pointer to it from the parent to the `nullptr`.  Likewise, it 
-is still relatively simpe if the node you need to remove has only a left or a right 
+is still relatively simple if the node you need to remove has only a left or a right 
 subtree.  In either case with only 1 subtree, delete the node to remove, and
 point the parents pointer that was pointing to the node you removed to its
 remaining left or right subtree.  You should be able to convince yourself with
