@@ -429,7 +429,7 @@ right subtree is the correct thing to do to maintain the tree structure.
 
 **General Case**: Otherwise continue searching left.  But unlike for
 the `getMinimum()` we need to set our left subtree to what is returned
-from calling ourself recursively.  This is because, if the left
+from calling our self recursively.  This is because, if the left
 subtree is not the node to be deleted it should return itself.  But if
 the left node is the node being deleted, it will instead return its
 right subtree, which if we set to our new left child will maintain the
